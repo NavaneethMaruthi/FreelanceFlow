@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreelanceFlow | Dashboard</title>
+
+      <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">FreelanceFlow</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="time.html">Time</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ </header>
+    <main class="container my-4">
+        <h1>Welcome to FreelanceFlow Dashboard</h1>
+        <p>This is the main dashboard where you can manage your projects and track your time.</p>
+
+        <h2 class="mb-4">Dashboard</h2>
+
+  <!-- Top row: Summary cards -->
+  <div class="row g-4 mb-4">
+    <!-- Total Earnings -->
+    <div class="col-md-6">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Total Earnings</h5>
+          <h2 class="fw-bold">$XXXX</h2>
+          <p class="text-muted">This month/week???</p> <!-- it would be cool for the user to pick -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Hours Worked -->
+    <div class="col-md-6">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Hours Worked</h5>
+          <h2 class="fw-bold">XX hrs</h2>
+          <p class="text-muted">This month/week???</p> <!-- it would be cool for the user to pick -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom: Active Projects -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Active Projects (top 3? 5?)</h5>
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Client</th>
+            <th scope="col">Status</th>
+            <th scope="col">Deadline</th>
+          </tr>
+        </thead>
+        <tbody id="top-projects-body">
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    </main>
+
+<!-- Footer -->
+<footer class="bg-white text-center text-muted py-3 mt-5 border-top">
+  <div class="container">
+    <small>
+      &copy; 2025 <strong>FreelanceFlow</strong> — Built using HTML5, CSS5, Vanilla JavaScript, Node.js + Express, and MongoDB. 
+    </small>
+  </div>
+</footer>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
+    
+</body>
+</html>
