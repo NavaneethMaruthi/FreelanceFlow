@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreelanceFlow | Client</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="index.html">FreelanceFlow</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="projects.html">Projects</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="client.html">Clients</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="time.html">Time</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-4">
+        <h1>Clients</h1>
+        <p>Manage your clients here.</p>
+      <main class="container my-5">
+  <!-- Header row -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0">Client List</h2>
+    <a href="#" id="addClientBtn" class="btn btn-primary">Add Client</a>
+  </div>
+
+  <!-- Clients table -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="clientTableBody">
+            <tr>
+                <td colspan="6" class="text-center text-muted py-4">
+                  <i class="fas fa-folder-open fa-3x mb-3 d-block"></i>
+                    No clients yet. Click "Add Client" to get started.
+                </td>
+             </tr>
+          </tbody>
+          <!-- js will add client entries here -->
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-white text-center text-muted py-3 mt-5 border-top">
+      <div class="container">
+        <small>
+          &copy; 2025 <strong>FreelanceFlow</strong> — Built using HTML5, CSS5,
+          Vanilla JavaScript, Node.js + Express, and MongoDB.
+        </small>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
