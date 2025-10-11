@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreelanceFlow | Projects</title>
+    <title>FreelanceFlow | Time</title>
 
       <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -33,45 +33,40 @@
       </div>
     </nav>
  </header>
+
     <main class="container my-4">
-        <h1>Projects</h1>
-      <main class="container my-5">
+        <h1>Time Tracking </h1>
+        <p>Track your time here to properly bill your clients.</p>
+
+        <main class="container my-5">
   <!-- Header row -->
   <div class="d-flex align-items-center justify-content-between mb-3">
-    <h2 class="mb-0">Project List</h2>
-    <a href="#" id="addProjectBtn" class="btn btn-primary">Add Project</a>
+    <h2 class="mb-0">Time Entries</h2>
+    <a href="#" id="logEntryBtn" class="btn btn-primary">Log Entry</a>
   </div>
 
-  <!-- Projects table -->
+  <!-- Table -->
   <div class="card shadow-sm">
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-striped table-hover align-middle mb-0">
           <thead>
             <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Client</th>
+              <th scope="col">Date</th>
+              <th scope="col">Hours</th>
+              <th scope="col">Project or Client?? </th> <!-- link project or client here with id in js ?? -->
+              <th scope="col">Task</th>
               <th scope="col">Status</th>
-              <th scope="col">Deadline</th>
             </tr>
           </thead>
-          <tbody id="projectTableBody">
-            <tr>
-                <td colspan="6" class="text-center text-muted py-4">
-                  <i class="fas fa-folder-open fa-3x mb-3 d-block"></i>
-                    No projects yet. Click "Add Project" to get started.
-                </td>
-             </tr>
-          </tbody>
-          <!-- js will add project entries here -->
+          <tbody id="timeTableBody"></tbody>
+          <!-- js will add time entries here -->
         </table>
       </div>
     </div>
   </div>
 </main>
-
-
-
+    </main>
 
 <!-- Footer -->
 <footer class="bg-white text-center text-muted py-3 mt-5 border-top">
@@ -81,6 +76,7 @@
     </small>
   </div>
 </footer>
+<script type="module" src="./js/auth/logout.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
     
