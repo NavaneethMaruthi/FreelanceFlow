@@ -1,0 +1,20 @@
+{
+  "name": "freelanceflow",
+  "version": "1.0.0",
+  "description": "The freelancer will be able to track clients, organize projects, log billable hours, and monitor their income without juggling multiple spreadsheets or tools. We use HTML5, CSS3, and vanilla JavaScript (ES6 modules) for the frontend, Node.js + Express for the backend, MongoDB for data storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NavaneethMaruthi/FreelanceFlow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NavaneethMaruthi/FreelanceFlow/issues"
+  },
+  "homepage": "https://github.com/NavaneethMaruthi/FreelanceFlow#readme"
+}
