@@ -30,7 +30,11 @@
     "prettier": "^3.6.2"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongo": "^5.1.0",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongodb": "^6.20.0",
     "nodemon": "^3.1.10"
   }
 }
