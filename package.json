@@ -2,8 +2,10 @@
   "name": "freelanceflow",
   "version": "1.0.0",
   "description": "The freelancer will be able to track clients, organize projects, log billable hours, and monitor their income without juggling multiple spreadsheets or tools. We use HTML5, CSS3, and vanilla JavaScript (ES6 modules) for the frontend, Node.js + Express for the backend, MongoDB for data storage",
-  "main": "index.js",
+  "main": "main.js",
+  "type": "module",
   "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,10 +13,29 @@
     "url": "git+https://github.com/NavaneethMaruthi/FreelanceFlow.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Navaneeth Maruthi & Rowan Lowden",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/NavaneethMaruthi/FreelanceFlow/issues"
   },
-  "homepage": "https://github.com/NavaneethMaruthi/FreelanceFlow#readme"
+  "homepage": "https://github.com/NavaneethMaruthi/FreelanceFlow#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jest": "^29.0.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongodb": "^6.20.0",
+    "nodemon": "^3.1.10"
+  }
 }
