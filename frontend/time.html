@@ -25,7 +25,6 @@
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="client.html">Clients</a></li>
             <li class="nav-item"><a class="nav-link" href="time.html">Time</a></li>
             <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
           </ul>
@@ -42,7 +41,10 @@
   <!-- Header row -->
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h2 class="mb-0">Time Entries</h2>
-    <a href="#" id="logEntryBtn" class="btn btn-primary">Log Entry</a>
+    <a href="#" id="logEntryBtn"
+   class="btn btn-primary"
+   data-bs-toggle="modal"
+   data-bs-target="#logEntryModal">Log Entry</a>
   </div>
 
   <!-- Table -->
@@ -54,19 +56,85 @@
             <tr>
               <th scope="col">Date</th>
               <th scope="col">Hours</th>
-              <th scope="col">Project or Client?? </th> <!-- link project or client here with id in js ?? -->
+              <th scope="col">Client </th> <!-- link project or client here with id in js ?? -->
               <th scope="col">Task</th>
               <th scope="col">Status</th>
             </tr>
           </thead>
-          <tbody id="timeTableBody"></tbody>
+          <tbody id="timesheet-rows"></tbody>
           <!-- js will add time entries here -->
         </table>
       </div>
     </div>
   </div>
 </main>
-    </main>
+
+<!-- Log Entry Modal -->
+<div class="modal fade" id="logEntryModal" tabindex="-1" aria-labelledby="logEntryLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" id="ts-form">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logEntryLabel">Log Time Entry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="ts-date" class="form-label">Date</label>
+          <input id="ts-date" type="date" name="date" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="ts-hours" class="form-label">Hours</label>
+          <input id="ts-hours" type="number" name="hours" class="form-control"
+                 step="0.25" min="0.25" max="24" placeholder="e.g., 1.5" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="projectSelect" class="form-label">Project</label>
+          <select id="projectSelect" name="projectId" class="form-select" required>
+            <!-- populated by JS -->
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="ts-comments" class="form-label">Comments</label>
+          <textarea id="ts-comments" name="comments" class="form-control" rows="3"
+                    placeholder="What did you do?"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="ts-status" class="form-label">Status</label>
+          <select id="ts-status" name="status" class="form-select">
+            <option value="unpaid" selected>Unpaid</option>
+            <option value="invoiced">Invoiced</option>
+            <option value="paid">Paid</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  async function loadProjects() {
+    const sel = document.getElementById("projectSelect");
+    if (!sel) return;
+    const res = await fetch("/api/timesheets/projects", { cache: "no-store" });
+    const list = await res.json();
+    sel.innerHTML = list.map(p =>
+      `<option value="${p.id}">${p.client ? p.client + " — " : ""}${p.name}</option>`
+    ).join("");
+  }
+
+  const modalEl = document.getElementById("logEntryModal");
+  modalEl.addEventListener("show.bs.modal", loadProjects);
+</script>
 
 <!-- Footer -->
 <footer class="bg-white text-center text-muted py-3 mt-5 border-top">
@@ -77,8 +145,10 @@
   </div>
 </footer>
 <script type="module" src="./js/auth/logout.js"></script>
+
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
-    
+<script type="module" src="./js/time.js"></script>    
+
 </body>
 </html>

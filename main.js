@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { connectDB } from "./db/connection.js";
 import authRoutes from "./routes/auth.js";
 import projectsRoutes from "./routes/projects.js";
+import timesheetsRouter from "./routes/timesheets.js";
 
 // Load environment variables
 dotenv.config();
@@ -42,6 +43,7 @@ app.use(express.static("frontend"));
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectsRoutes);
+app.use("/api/timesheets", timesheetsRouter);
 
 // Connect to database and start server
 connectDB()
