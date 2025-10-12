@@ -56,8 +56,7 @@ The freelancer will be able to track clients, organize projects, log billable ho
 - Session storage in MongoDB
 
 **DevOps & Infrastructure**
-
-Docker - Container platform for MongoDB
+- Docker - Container platform for MongoDB
 
 **Development Tools**
 - Nodemon - Auto-restart development server
