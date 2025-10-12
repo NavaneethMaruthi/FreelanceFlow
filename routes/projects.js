@@ -108,7 +108,7 @@ router.put("/:id", async (req, res) => {
     .collection("projects")
     .updateOne(
       { _id: id, userId: new ObjectId(req.session.userId) },
-      { $set: { name, client, status, deadline, updatedAt: new Date() } }
+      { $set: { name, client, status, deadline, updatedAt: new Date() } },
     );
 
   res.json({ success: true });

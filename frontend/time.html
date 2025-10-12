@@ -122,20 +122,6 @@
   </div>
 </div>
 
-<!-- <script>
-  async function loadProjects() {
-    const sel = document.getElementById("projectSelect");
-    if (!sel) return;
-    const res = await fetch("/api/timesheets/projects", { cache: "no-store" });
-    const list = await res.json();
-    sel.innerHTML = list.map(p =>
-      `<option value="${p.id}">${p.client ? p.client + " — " : ""}${p.name}</option>`
-    ).join("");
-  }
-
-  const modalEl = document.getElementById("logEntryModal");
-  modalEl.addEventListener("show.bs.modal", loadProjects);
-</script> -->
 
 <!-- Footer -->
 <footer class="bg-white text-center text-muted py-3 mt-5 border-top">

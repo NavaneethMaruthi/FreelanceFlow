@@ -1,4 +1,4 @@
-// /public/js/time.js
+//js/time.js
 const modalEl = document.getElementById("logEntryModal");
 const logBtn = document.getElementById("logEntryBtn");
 const form = document.getElementById("ts-form");
@@ -27,7 +27,7 @@ async function loadProjects() {
   projectSelect.innerHTML = projects
     .map(
       (p) =>
-        `<option value="${p.id}">${p.name}${p.client ? " — " + p.client : ""}</option>`
+        `<option value="${p.id}">${p.name}${p.client ? " — " + p.client : ""}</option>`,
     )
     .join("");
 }
@@ -108,6 +108,7 @@ form.addEventListener("submit", async (e) => {
   form.reset();
   editingId = null;
   document.querySelector("#logEntryLabel").textContent = "Log Time Entry";
+  // eslint-disable-next-line no-undef
   bootstrap.Modal.getInstance(modalEl)?.hide();
   await loadTimesheets();
 });
@@ -161,6 +162,7 @@ tbody.addEventListener("click", async (e) => {
 
     // Load projects and show modal
     await loadProjects();
+    // eslint-disable-next-line no-undef
     const modal = new bootstrap.Modal(modalEl);
     modal.show();
   }
@@ -179,8 +181,6 @@ modalEl?.addEventListener("show.bs.modal", () => {
     loadProjects();
   }
 });
-
-
 
 await loadProjects();
 await loadTimesheets();
