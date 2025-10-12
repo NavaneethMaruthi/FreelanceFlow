@@ -60,11 +60,11 @@ The freelancer will be able to track clients, organize projects, log billable ho
 Docker - Container platform for MongoDB
 
 **Development Tools**
-Nodemon - Auto-restart development server
-ESLint - Code linting and quality checks
-Prettier - Code formatting
-dotenv - Environment variable management
-Git - Version control
+- Nodemon - Auto-restart development server
+- ESLint - Code linting and quality checks
+- Prettier - Code formatting
+- dotenv - Environment variable management
+- Git - Version control
 
 ## Screenshots
 
