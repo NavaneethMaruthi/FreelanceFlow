@@ -26,7 +26,6 @@ The freelancer will be able to track clients, organize projects, log billable ho
 ### Project Tracking
 - ✏️ Create, read, update, and delete projects
 - 📅 Set project deadlines and track status
-- 👥 Associate projects with clients
 - 🏷️ Categorize by status (To-Do, Active, Paused, Completed)
 
 ### Time Tracking
@@ -54,7 +53,7 @@ The freelancer will be able to track clients, organize projects, log billable ho
 - Native MongoDB driver (no Mongoose)
 
 **Database:**
-- MongoDB (3 collections with CRUD operations)
+- MongoDB 
 - Session storage in MongoDB
 
 **Security:**
