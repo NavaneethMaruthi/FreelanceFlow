@@ -71,5 +71,5 @@ The freelancer will be able to track clients, organize projects, log billable ho
 ## Use of AI
 
 ## License
-
+MIT
 ## Resources
