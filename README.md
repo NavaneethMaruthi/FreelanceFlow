@@ -45,7 +45,6 @@ The freelancer will be able to track clients, organize projects, log billable ho
 **Frontend:**
 - HTML5, CSS3, Bootstrap 5
 - Vanilla JavaScript (ES6 Modules)
-- Client-side rendering
 
 **Backend:**
 - Node.js + Express.js
@@ -56,11 +55,16 @@ The freelancer will be able to track clients, organize projects, log billable ho
 - MongoDB 
 - Session storage in MongoDB
 
-**Security:**
-- bcryptjs password hashing
-- express-session with MongoDB store
-- HTTP-only cookies
-- Environment variable configuration
+**DevOps & Infrastructure**
+
+Docker - Container platform for MongoDB
+
+**Development Tools**
+Nodemon - Auto-restart development server
+ESLint - Code linting and quality checks
+Prettier - Code formatting
+dotenv - Environment variable management
+Git - Version control
 
 ## Screenshots
 
@@ -99,12 +103,16 @@ NODE_ENV=development
 ```
 Step 4: Set Up MongoDB
 Using Local MongoDB
-```bash
-Install MongoDB:
-```
+
 macOS: brew install mongodb-community
 Ubuntu/Debian: sudo apt-get install mongodb
 Windows: Download installer from mongodb.com
+
+Step 5: Start Docker
+
+Step 6: MongoDB 
+Create New MongoDB connection and connect it
+(Make sure you make the changes in the code if you are using different names)
 
 Step 5: Start the Application
 Run the development server:
