@@ -57,6 +57,27 @@ router.post("/", async (req, res) => {
   res.status(201).json({ ...doc, _id: result.insertedId.toString() });
 });
 
+// GET /api/projects/:id -> fetch one project for editing
+router.get("/:id", async (req, res) => {
+  const db = getDB();
+  const { id } = req.params;
+
+  if (!ObjectId.isValid(id)) {
+    return res.status(400).json({ success: false, message: "Invalid ID" });
+  }
+
+  const project = await db.collection("projects").findOne({
+    _id: new ObjectId(id),
+    userId: new ObjectId(req.session.userId),
+  });
+
+  if (!project) {
+    return res.status(404).json({ success: false, message: "Not found" });
+  }
+
+  res.json({ ...project, _id: project._id.toString() });
+});
+
 // DELETE /api/projects/:id -> delete one of the current user's projects
 router.delete("/:id", async (req, res) => {
   const db = getDB();
@@ -76,6 +97,21 @@ router.delete("/:id", async (req, res) => {
   }
 
   res.status(204).end();
+});
+
+router.put("/:id", async (req, res) => {
+  const db = getDB();
+  const id = new ObjectId(req.params.id);
+  const { name, client, status, deadline } = req.body;
+
+  await db
+    .collection("projects")
+    .updateOne(
+      { _id: id, userId: new ObjectId(req.session.userId) },
+      { $set: { name, client, status, deadline, updatedAt: new Date() } }
+    );
+
+  res.json({ success: true });
 });
 
 export default router;
