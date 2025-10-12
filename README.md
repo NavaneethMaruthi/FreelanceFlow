@@ -66,6 +66,62 @@ The freelancer will be able to track clients, organize projects, log billable ho
 
 
 ## Instructions
+Step 1: Clone the Repository
+```bash
+git clone https://github.com/NavaneethMaruthi/FreelanceFlow.git
+cd FreelanceFlow
+```
+Step 2: Install Dependencies
+```bash
+npm install
+```
+This installs all required packages including Express, MongoDB driver, bcryptjs, express-session, and more
+
+Step 3: Configure Environment Variables
+Create a .env file in the root directory:
+```bash
+touch .env
+```
+Add the following configuration to your .env file:
+```
+# MongoDB Connection
+MONGO_URL=mongodb://localhost:27017
+
+# Session Configuration
+SESSION_SECRET=your-super-secret-key-change-this-in-production
+
+# Cookie Settings
+COOKIE_MAX_AGE=86400000
+
+# Server Configuration
+PORT=3000
+NODE_ENV=development
+```
+Step 4: Set Up MongoDB
+Using Local MongoDB
+```bash
+Install MongoDB:
+```
+macOS: brew install mongodb-community
+Ubuntu/Debian: sudo apt-get install mongodb
+Windows: Download installer from mongodb.com
+
+Step 5: Start the Application
+Run the development server:
+```bash
+npm start
+```
+You should see output similar to:
+```
+Starting FreelanceFlow backend...
+✅ Connected to MongoDB
+✅ Server running on http://localhost:3000
+📝 Environment: development
+📁 Serving frontend from /frontend
+📂 Auth routes available at /api/auth
+📂 Projects routes available at /api/projects
+The application is now running at: http://localhost:3000
+```
 
 ## Use of AI
 
