@@ -72,7 +72,7 @@ document
     if (res.ok) {
       // Close modal
       const modal = bootstrap.Modal.getInstance(
-        document.getElementById("addProjectModal")
+        document.getElementById("addProjectModal"),
       );
       modal.hide();
       e.target.reset();
@@ -139,7 +139,7 @@ function escape(s = "") {
     (c) =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
         c
-      ]
+      ],
   );
 }
 

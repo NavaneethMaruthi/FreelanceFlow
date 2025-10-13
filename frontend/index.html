@@ -10,6 +10,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
+        <script>
+        fetch('/api/auth/check', { credentials: 'include' })
+            .then(r => r.json())
+            .then(data => {
+                if (!data.loggedIn) {
+                    window.location.href = '/login.html';
+                }
+            })
+            .catch(() => {
+                window.location.href = '/login.html';
+            });
+    </script>
   </head>
   <body>
     <header>
@@ -112,6 +124,7 @@
         </small>
       </div>
     </footer>
+
 
     
     <script type="module" src="./js/auth/logout.js"></script>
