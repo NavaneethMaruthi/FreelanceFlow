@@ -14,7 +14,7 @@ Navaneenth Maruthi & Rowan Lowden
 
 [Google Slides](https://docs.google.com/presentation/d/1rYleCg4gGYmvLsm5UJN2bc4ibod5qCe9eh7do8R7aoU/edit?usp=sharing)
 
-[Video Demo](https://youtu.be/E4Oe6jS281A)
+[Video Demo](https://youtu.be/ncYZG-jKV7I)
 
 ## Project Objective
 
