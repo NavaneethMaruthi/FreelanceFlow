@@ -20,11 +20,31 @@ function formatDate(val) {
   });
 }
 
+function statusBadge(s) {
+  const key = String(s || "")
+    .toLowerCase()
+    .trim();
+
+  // accept both "to-do" and "todo"
+  const normalized = key === "to-do" ? "todo" : key;
+
+  const map = {
+    todo: "badge bg-secondary", // gray
+    active: "badge bg-info text-dark", // blue-ish, readable
+    paused: "badge bg-warning text-dark", // yellow
+    completed: "badge bg-success", // green
+  };
+
+  const cls = map[normalized] || "badge bg-light text-dark";
+  const label = s ?? "—"; // show original text
+  return `<span class="${cls} text-capitalize">${escape(label)}</span>`;
+}
+
 function row({ _id, name, client = "", status = "to-do", deadline = "" }) {
   return `<tr>
     <td>${escape(name)}</td>
     <td>${escape(client)}</td>
-    <td class="text-capitalize">${escape(status)}</td>
+    <td>${statusBadge(status)}</td>
     <td>${formatDate(deadline)}</td>
      <td> <button class="btn btn-outline-primary btn-sm edit-btn" data-id="${_id}">Edit</button>
      <button class="btn btn-sm btn-outline-danger" data-action="delete" data-id="${_id}">Delete</button>
