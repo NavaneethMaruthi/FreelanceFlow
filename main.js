@@ -6,6 +6,7 @@ import { connectDB } from "./db/connection.js";
 import authRoutes from "./routes/auth.js";
 import projectsRoutes from "./routes/projects.js";
 import timesheetsRouter from "./routes/timesheets.js";
+import dashboardRoutes from "./routes/dashboard.js";
 
 // Load environment variables
 dotenv.config();
@@ -34,7 +35,7 @@ app.use(
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
     },
-  })
+  }),
 );
 
 // Serve static frontend files
@@ -44,6 +45,7 @@ app.use(express.static("frontend"));
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectsRoutes);
 app.use("/api/timesheets", timesheetsRouter);
+app.use("/api/dashboard", dashboardRoutes);
 
 // Connect to database and start server
 connectDB()

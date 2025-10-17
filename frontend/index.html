@@ -10,6 +10,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
+        <script>
+        fetch('/api/auth/check', { credentials: 'include' })
+            .then(r => r.json())
+            .then(data => {
+                if (!data.loggedIn) {
+                    window.location.href = '/login.html';
+                }
+            })
+            .catch(() => {
+                window.location.href = '/login.html';
+            });
+    </script>
   </head>
   <body>
     <header>
@@ -49,7 +61,7 @@
       </nav>
     </header>
     <main class="container my-4">
-      <h1>Welcome to FreelanceFlow Dashboard</h1>
+      <h1>Welcome to FreelanceFlow</h1>
       <p>
         This is the main dashboard where you can manage your projects and track
         your time.
@@ -63,9 +75,9 @@
         <div class="col-md-6">
           <div class="card text-center shadow-sm">
             <div class="card-body">
-              <h5 class="card-title text-muted">Total Earnings</h5>
-              <h2 class="fw-bold">$XXXX</h2>
-              <p class="text-muted">This month/week???</p>
+               <h5 class="card-title text-muted">Total Projects</h5>
+               <h2 class="fw-bold projects-value">0</h2>
+               <p class="text-muted">All time</p>
               <!-- it would be cool for the user to pick -->
             </div>
           </div>
@@ -76,8 +88,8 @@
           <div class="card text-center shadow-sm">
             <div class="card-body">
               <h5 class="card-title text-muted">Hours Worked</h5>
-              <h2 class="fw-bold">XX hrs</h2>
-              <p class="text-muted">This month/week???</p>
+              <h2 class="fw-bold hours-value">O hrs</h2>
+              <p class="text-muted">Total</p>
               <!-- it would be cool for the user to pick -->
             </div>
           </div>
@@ -87,7 +99,7 @@
       <!-- Bottom: Active Projects -->
       <div class="card shadow-sm">
         <div class="card-body">
-          <h5 class="card-title mb-3">Active Projects (top 3? 5?)</h5>
+          <h5 class="card-title mb-3">Active Projects (Top 3)</h5>
           <table class="table table-striped align-middle">
             <thead>
               <tr>
@@ -113,8 +125,10 @@
       </div>
     </footer>
 
-    <script type="module" src="./js/frontend.js"></script>
+
+    
     <script type="module" src="./js/auth/logout.js"></script>
+    <script type="module" src="./js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
