@@ -114,7 +114,8 @@ Add the following configuration to your .env file:
 
 ```
 # MongoDB Connection
-MONGO_URL=mongodb://localhost:27017
+MONGO_URL=mongodb+srv://navaneethchintu789_db_user:Navaneeth@freelanceflow.6jzatqf.mongodb.net/?retryWrites=true&w=majority&appName=FreelanceFlow
+
 
 # Session Configuration
 SESSION_SECRET=your-super-secret-key-change-this-in-production
