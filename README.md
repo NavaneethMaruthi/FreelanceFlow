@@ -141,7 +141,7 @@ Step 6: MongoDB
 Create New MongoDB connection and connect it
 (Make sure you make the changes in the code if you are using different names)
 
-Step 5: Start the Application
+Step 7: Start the Application
 Run the development server:
 
 ```bash
@@ -164,6 +164,8 @@ The application is now running at: http://localhost:3000
 ## Use of AI
 
 Rowan-- I used ChatGPT to help to explain some processes and break down topics I didn't understand like MongoDB and Docker and their role together, debugging the projects drop down on the time page, clarify express routes, help with mock data, and some other questions about the different tech stacks and how they worked together.
+
+What prompts did you give to ChatGPT? How much of the mock data was created by ChatGPT? Documenting these things a bit more specifically could be helpful
 
 ## License
 
