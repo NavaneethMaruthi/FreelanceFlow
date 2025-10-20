@@ -11,18 +11,27 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
         <script>
+    // Wait for the page to load before checking auth
+    document.addEventListener('DOMContentLoaded', function() {
         fetch('/api/auth/check', { credentials: 'include' })
-            .then(r => r.json())
+            .then(r => {
+                if (!r.ok) {
+                    throw new Error('Not authenticated');
+                }
+                return r.json();
+            })
             .then(data => {
                 if (!data.loggedIn) {
                     window.location.href = '/login.html';
                 }
             })
-            .catch(() => {
+            .catch((error) => {
+                console.error('Auth check failed:', error);
                 window.location.href = '/login.html';
             });
-    </script>
-    
+    });
+</script>
+
   </head>
   <body>
     <header>
