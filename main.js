@@ -34,6 +34,7 @@ app.use(
       maxAge: parseInt(process.env.COOKIE_MAX_AGE) || 86400000, // 24 hours
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
+      sameSite: "lax", // ADD THIS
     },
   }),
 );
