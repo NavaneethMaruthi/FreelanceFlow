@@ -113,7 +113,7 @@ touch .env
 Add the following configuration to your .env file:
 
 ```
-# MongoDB Connection
+# MongoDB Connection for local connection
 MONGO_URL=mongodb://localhost:27017
 
 
@@ -127,8 +127,12 @@ COOKIE_MAX_AGE=86400000
 PORT=3000
 NODE_ENV=development
 ```
+Change 
+NODE_ENV=production 
+mongo_url to your mongodb Atlas 
 
-Step 4: Set Up MongoDB
+
+Step 4: Set Up MongoDB 
 Using Local MongoDB
 
 macOS: brew install mongodb-community
