@@ -6,7 +6,7 @@ Navaneenth Maruthi & Rowan Lowden
 
 ## Relevant Links
 
-[Web Link]((https://freelanceflow-1.onrender.com))
+[Web Link](https://freelanceflow-1.onrender.com)
 
 [Class Link](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
